@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Test.Controllers;
+using Test.Models;
 
 namespace Test.Controllers
 {
@@ -12,7 +12,7 @@ namespace Test.Controllers
         // GET: Movies
         public ActionResult Random()
         {
-            var Movie = new Movie()
+            var Movie = new Movies()
             {
                 Nombre = "Friend request!"
             };

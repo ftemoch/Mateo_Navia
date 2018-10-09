@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Test.Models
 {
-    public class Movie
+    public class Movies
     {
-        public int MyProperty { get; set; }
-        public String Nimbre { get; set; }
+        public int Id { get; set; }
+        public String Nombre { get; set; }
     }
 }
