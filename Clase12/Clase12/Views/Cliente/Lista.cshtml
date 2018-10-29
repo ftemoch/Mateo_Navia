@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Clase12.Models.Cliente>
+@{
+    ViewBag.Title = "Lista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista Clientes</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Salario</th>
+            <th>Activo</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+
+                <td>@cliente.Nombre</td>
+                <td>@cliente.Apellido</td>
+                <td>@cliente.Salario</td>
+
+                @if (cliente.Activo == true)
+                {
+                    <td>Activo</td>
+                }
+                else
+                {
+                    <td>Inactivo</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

@@ -195,14 +195,32 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810291856054_InitialModel.cs" />
+    <Compile Include="Migrations\201810291856054_InitialModel.Designer.cs">
+      <DependentUpon>201810291856054_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810291900003_creacionDb.cs" />
+    <Compile Include="Migrations\201810291900003_creacionDb.Designer.cs">
+      <DependentUpon>201810291900003_creacionDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810292001433_creacionDb1.cs" />
+    <Compile Include="Migrations\201810292001433_creacionDb1.Designer.cs">
+      <DependentUpon>201810292001433_creacionDb1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -265,6 +283,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Cliente\Lista.cshtml" />
+    <Content Include="Views\Movies\ListaMovies.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -281,6 +301,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810291856054_InitialModel.resx">
+      <DependentUpon>201810291856054_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810291900003_creacionDb.resx">
+      <DependentUpon>201810291900003_creacionDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810292001433_creacionDb1.resx">
+      <DependentUpon>201810292001433_creacionDb1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
