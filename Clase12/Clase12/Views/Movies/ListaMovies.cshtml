@@ -1,25 +1,29 @@
 ﻿@model IEnumerable<Clase12.Models.Movie>
 @{
-    ViewBag.Title = "Movies";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Movies";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ListaMovies</h2>
+<h2>Lista Peliculas</h2>
 <table class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>Movies</th>
+	<thead>
+		<tr>
+			<th>Movies</th>
+			<th>Genero</th>
+		</tr>
+	</thead>
 
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (var movie in Model)
-        {
-            <tr>
-                <td>@movie.Nombre</td>
-
-            </tr>
-        }
-    </tbody>
+	<tbody>
+		@foreach (var movie in Model)
+		{
+		<tr>
+			@*<td>@movie.Nombre</td>*@
+			<td>@Html.ActionLink(movie.Nombre, "Edit", "Movies", new { id = movie.ID }, null)</td>
+			<td>@movie.Genero</td>
+			<td>@Html.ActionLink("Eliminar", "Eliminar", "Movies", new { id = movie.ID }, null)</td>
+		</tr>
+		}
+	</tbody>
 </table>
+
+

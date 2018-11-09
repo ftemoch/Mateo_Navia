@@ -1,0 +1,34 @@
+﻿@model Clase12.ViewModels.NewClienteViewModel
+@{
+	ViewBag.Title = "Nueva";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nuevo Cliente</h2>
+@using (Html.BeginForm("Create", "Clientes"))
+{
+	<div class=" form-group">
+		@Html.LabelFor(m => m.Cliente.Nombre)
+		@Html.TextBoxFor(m => m.Cliente.Nombre, new { @class = "form-control" })
+	</div>
+
+	<div class=" form-group">
+		@Html.LabelFor(m => m.Cliente.Apellido)
+		@Html.TextBoxFor(m => m.Cliente.Apellido, new { @class = "form-control" })
+	</div>
+
+	<div class="checkbox">
+		<label>
+			@Html.CheckBoxFor(m => m.Cliente.EstaInscritoRevista) Esta inscrito a la revista ?
+		</label>
+	</div>
+
+	<div class="form-group">
+		@*@Html.LabelFor(m => m.Cliente.EstaInscritoRevista)*@			
+		@Html.DropDownListFor(m => m.Cliente.EstaInscritoRevista, new SelectList(Model.TipoClientes, "Id", "Nombre"), "Seleccione tipo cliente", new { @class = "form-conttrol" })
+	</div>
+
+	@Html.HiddenFor(m => m.Cliente.ID);
+	<button type="submit" class="btn btn-primary">Guardar</button>
+
+}

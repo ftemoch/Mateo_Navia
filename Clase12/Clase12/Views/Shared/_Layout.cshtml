@@ -23,10 +23,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Clientes", "Lista", "Cliente")</li>
-                    <li>@Html.ActionLink("Movies", "ListaMovies", "Movies")</li>
+                    @*<li>@Html.ActionLink("Acerca de", "About", "Home")</li>*@
+                    @*<li>@Html.ActionLink("Contacto", "Contact", "Home")</li>*@
+                    <li>@Html.ActionLink("Clientes", "Lista", "Clientes")</li>
+                    <li>@Html.ActionLink("Peliculas", "ListaMovies", "Movies")</li>
+                    <li>@Html.ActionLink("Tarifas", "ListaTarifas", "Tarifa")</li>
+                    <li>@Html.ActionLink("Nuevo Cliente", "Nueva", "Clientes")</li>
+                    <li>@Html.ActionLink("Nueva Pelicula", "Genero", "Movies")</li>
+                    <li>@Html.ActionLink("Nueva Tarifa", "NuevaTarifa", "Tarifa")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -42,6 +46,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/lib")
     @RenderSection("scripts", required: false)
 </body>
 </html>

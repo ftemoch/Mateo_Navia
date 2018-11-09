@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Clase12.Models.Tarifas>
+@{
+	ViewBag.Title = "ListaTarifas";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista Tarifas</h2>
+<table class="table table-bordered table-hover">
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Costo</th>
+			<th>Descuento</th>
+			<th>Fecha</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@foreach (var tarifas in Model)
+		{
+			<tr>
+				<td>@Html.ActionLink(tarifas.Nombre, "Edit", "Tarifa", new { id = tarifas.Id }, null)</td>
+				@*<td>@tarifas.Nombre</td>*@
+				<td>@tarifas.Costo</td>
+				<td>@tarifas.Descuento</td>
+				<td>@tarifas.Fecha</td>
+				<td>@Html.ActionLink("Eliminar", "Eliminar", "Tarifa", new { id = tarifas.Id }, null)</td>
+			</tr>
+		}
+	</tbody>
+</table>

@@ -1,0 +1,35 @@
+﻿@model Clase12.ViewModels.NewTarifaViewModel
+@{
+	ViewBag.Title = "NuevaTarifa";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nueva Tarifa</h2>
+@using (Html.BeginForm("Create", "Tarifa"))
+{
+	<div class=" form-group">
+		@Html.LabelFor(m => m.Tarifa.Nombre)
+		@Html.TextBoxFor(m => m.Tarifa.Nombre, new { @class = "form-control" })
+
+	</div>
+
+	<div class=" form-group">
+		@Html.LabelFor(m => m.Tarifa.Costo)
+		@Html.TextBoxFor(m => m.Tarifa.Costo, new { @class = "form-control" })
+	</div>
+
+	<div class=" form-group">
+		@Html.LabelFor(m => m.Tarifa.Descuento)
+		@Html.TextBoxFor(m => m.Tarifa.Descuento, new { @class = "form-control" })
+	</div>
+
+	<div class=" form-group">
+		@Html.LabelFor(m => m.Tarifa.Fecha)
+		@Html.TextBoxFor(m => m.Tarifa.Fecha, new { @class = "form-control" })
+	</div>
+
+
+	@Html.HiddenFor(m => m.Tarifa.Id);
+	<button type="submit" class="btn btn-primary">Guardar</button>
+
+}
