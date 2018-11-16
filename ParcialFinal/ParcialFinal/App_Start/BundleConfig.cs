@@ -9,9 +9,18 @@ namespace ParcialFinal
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+						"~/Scripts/jquery-{version}.js",
+						"~/Scripts/bootstrap.js",
+						"~/scripts/bootbox.js",
+						"~/Scripts/respond.js",
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+						"~/scripts/datatables/jquery.datatables.js",
+						"~/scripts/datatables/datatables.bootstrap.js",
+						"~/scripts/typeahead.bundle.js",
+						"~/scripts/toastr.js"
+												));
+
+			bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
             // Utilice la versión de desarrollo de Modernizr para desarrollar y obtener información. De este modo, estará
@@ -23,8 +32,14 @@ namespace ParcialFinal
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
-        }
+					  "~/Content/bootstrap.css",
+					  "~/Content/bootstrap-lumen.css",
+					  "~/Content/bootstrap-theme.css",
+
+					  "~/content/datatables/css/datatables.bootstrap.css",
+					  "~/content/typeahead.css",
+					  "~/content/toastr.css",
+					  "~/Content/site.css"));
+		}
     }
 }

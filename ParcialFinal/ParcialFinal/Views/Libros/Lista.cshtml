@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ParcialFinal.Models.Libro>
+@{
+	ViewBag.Title = "Lista";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista Libros</h2>
+<h2>@Html.ActionLink("Agregar Libro", "Nueva", "Libros")</h2>
+
+<table id="libros" class="table table-bordered table-hover">
+	<thead>
+		<tr>
+			<th>Titulo</th>
+			<th>Autor</th>
+			<th>Edicion</th>
+			<th>ISBN</th>
+			<th>Borrar</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@foreach (var libro in Model)
+		{
+		<tr>
+			<td>@Html.ActionLink(libro.Titulo, "Edit", "Libros", new { id = libro.ID }, null)</td>
+			@*<td>@libro.Titulo</td>*@
+			<td>@libro.Autor</td>
+			<td>@libro.Edicion</td>
+			<td>@libro.ISBN</td>
+			<!--<td>@Html.ActionLink("Eliminar","Eliminar","Libros", new { id = libro.ID },null)</td>-->
+
+			<td><button data-customer-id="@libro.ID" class="btn-link js-delete">Borrar</button></td>
+		</tr>
+		}
+	</tbody>
+</table>
+
+@section scripts
+		{
+		<script>
+			$(document).ready(function () {
+				$("#libros").DataTable();
+
+				$("#libros").on("click", ".js-delete", function () {
+					var button = $(this);
+					if (confirm("¿Seguro que quieres eliminar este libro?")) {
+						$.ajax({
+							url: "/libros/Eliminar/" + button.attr("data-customer-id"),
+
+							success: function () {
+								button.parents("tr").remove();
+							}
+						});
+					}
+				});
+			});
+		</script>
+	}

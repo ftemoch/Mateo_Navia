@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FD2CDF73-D042-477C-9EF6-41AD5600BF88}</ProjectGuid>
+    <ProjectGuid>{D110B777-535A-4F4F-BA5E-330136A6D5D8}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -196,15 +196,41 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LibrosController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811161501226_LibroDb.cs" />
+    <Compile Include="Migrations\201811161501226_LibroDb.Designer.cs">
+      <DependentUpon>201811161501226_LibroDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811161553332_datosLibro.cs" />
+    <Compile Include="Migrations\201811161553332_datosLibro.Designer.cs">
+      <DependentUpon>201811161553332_datosLibro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811161619530_LibroBdcreacion.cs" />
+    <Compile Include="Migrations\201811161619530_LibroBdcreacion.Designer.cs">
+      <DependentUpon>201811161619530_LibroBdcreacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811161625197_tipoLibrosDb.cs" />
+    <Compile Include="Migrations\201811161625197_tipoLibrosDb.Designer.cs">
+      <DependentUpon>201811161625197_tipoLibrosDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811161715363_test.cs" />
+    <Compile Include="Migrations\201811161715363_test.Designer.cs">
+      <DependentUpon>201811161715363_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Libro.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MyDbContext.cs" />
+    <Compile Include="Models\TipoLibro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\NewLibroViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -440,6 +466,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Libros\Lista.cshtml" />
+    <Content Include="Views\Libros\Nueva.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -457,6 +485,23 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811161501226_LibroDb.resx">
+      <DependentUpon>201811161501226_LibroDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811161553332_datosLibro.resx">
+      <DependentUpon>201811161553332_datosLibro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811161619530_LibroBdcreacion.resx">
+      <DependentUpon>201811161619530_LibroBdcreacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811161625197_tipoLibrosDb.resx">
+      <DependentUpon>201811161625197_tipoLibrosDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811161715363_test.resx">
+      <DependentUpon>201811161715363_test.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -473,9 +518,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49525</DevelopmentServerPort>
+          <DevelopmentServerPort>49170</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49525/</IISUrl>
+          <IISUrl>http://localhost:49170/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

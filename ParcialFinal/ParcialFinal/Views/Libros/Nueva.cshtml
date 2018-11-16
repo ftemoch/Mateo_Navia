@@ -1,0 +1,33 @@
+﻿@model ParcialFinal.ViewModels.NewLibroViewModel
+@{
+	ViewBag.Title = "Nueva";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nuevo Libro</h2>
+@using (Html.BeginForm("Create", "Libros"))
+{
+	<div class=" form-group">
+		@Html.LabelFor(m => m.Libro.Titulo)
+		@Html.TextBoxFor(m => m.Libro.Titulo, new { @class = "form-control" })
+	</div>
+
+	<div class=" form-group">
+		@Html.LabelFor(m => m.Libro.Autor)
+		@Html.TextBoxFor(m => m.Libro.Autor, new { @class = "form-control" })
+	</div>
+
+	<div class=" form-group">
+		@Html.LabelFor(m => m.Libro.Edicion)
+		@Html.TextBoxFor(m => m.Libro.Edicion, new { @class = "form-control" })
+	</div>
+
+	<div class=" form-group">
+		@Html.LabelFor(m => m.Libro.ISBN)
+		@Html.TextBoxFor(m => m.Libro.ISBN, new { @class = "form-control" })
+	</div>
+
+	@Html.HiddenFor(m => m.Libro.ID);
+	<button type="submit" class="btn btn-primary">Guardar</button>
+
+}

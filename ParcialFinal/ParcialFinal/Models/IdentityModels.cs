@@ -20,7 +20,10 @@ namespace ParcialFinal.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
+		public DbSet<Libro> Libros { get; set; }
+		public DbSet<TipoLibro> TipoLibros { get; set; }
+
+		public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
